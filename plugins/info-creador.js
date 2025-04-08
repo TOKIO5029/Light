@@ -5,14 +5,14 @@ let handler = async (m, { conn, usedPrefix, text, args, command }) => {
     let pp = await conn.profilePictureUrl(who).catch(_ => 'https://telegra.ph/file/24fa902ead26340f3df2c.png')
 
     let bio1 = await conn.fetchStatus('50248019799@s.whatsapp.net').catch(_ => 'Sin Biografía')
-    let bio2 = await conn.fetchStatus('51935016869@s.whatsapp.net').catch(_ => 'Sin Biografía')
+    let bio2 = await conn.fetchStatus('18294868853@s.whatsapp.net').catch(_ => 'Sin Biografía')
     let bioBot = await conn.fetchStatus(`${conn.user.jid.split('@')[0]}@s.whatsapp.net`).catch(_ => 'Sin Biografía')
 
     let name = await conn.getName(who)
 
     await sendContactArray(conn, m.chat, [
-        ['50248019799', ' creador del bot y staff', '?NeoTokyo Beats', 'creador', 'albertodovi100@example.com', 'MX', 'https://youtube.com/', bio1.status?.toString() || 'Sin Biografía'],
-        ['18294868853', 'asistencia', ' dioneibi', 'owner Emer', 'Elmerloayza819@gmail.com', 'NI', 'https://github.com/TOKIO5025', bio2.status?.toString() || 'Sin Biografía'],
+        ['50248019799', ' creador del bot y staff', '👑NeoTokyo Beats', 'creador', 'albertodovi100@example.com', 'MX', 'https://youtube.com/', bio1.status?.toString() || 'Sin Biografía'],
+        ['18294868853', 'asistencia', ' dioneibi', 'asistencia', 'nameusuario@gmail.com', 'NI', 'https://github.com/TOKIO5025', bio2.status?.toString() || 'Sin Biografía'],
         [`${conn.user.jid.split('@')[0]}`, '🌸 Es el Bot', 'Bot Oficial', '📵 No Hacer Spam', 'correo@example.com', 'MX', 'https://github.com', bioBot.status?.toString() || 'Sin Biografía']
     ], m)
 } 
